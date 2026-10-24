@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paws & Whiskers Help Line</title>
+<link rel="canonical" href="https://paws-whiskers-care-line.dkjmmz6whh.workers.dev/">
+<script>
+  if (window.location.hostname === "jmal9767.github.io") {
+    window.location.replace("https://paws-whiskers-care-line.dkjmmz6whh.workers.dev/");
+  }
+</script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/icon-512.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="theme-color" content="#c81e30">
+<style>
+  :root {
+    --navy: #c81e30;
+    --navy-dark: #ac1929;
+    --red: #c0392b;
+    --red-bg: #2b1720;
+    --ink: #f7f8fa;
+    --muted: #c9cdd5;
+    --bg: #0e1014;
+    --card: #191d24;
+    --border: #35383e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  header {
+    background: var(--navy);
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  header h1 { margin: 0 0 .25rem; font-size: 1.75rem; }
+  header p { margin: 0; opacity: .9; }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.25rem 0;
+  }
+  .emergency {
+    border: 2px solid var(--red);
+    background: var(--red-bg);
+  }
+  main > section:not(.emergency) { display: none; }
+  body.intake-ready main > section:not(.emergency) { display: block; }
+  .emergency h2 { color: var(--red); margin-top: 0; }
+  .emergency ul { columns: 2; gap: 2rem; padding-left: 1.2rem; margin: .75rem 0; }
+  .emergency li { margin-bottom: .35rem; break-inside: avoid; }
+  @media (max-width: 540px) { .emergency ul { columns: 1; } }
+  .emergency .actions { margin-top: .75rem; display: flex; flex-wrap: wrap; gap: .5rem; }
+  .btn {
+    display: inline-block;
+    padding: .65rem 1.1rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-red { background: var(--red); color: #fff; }
+  .btn-navy { background: var(--navy); color: #fff; }
+  .btn-navy:hover { background: var(--navy-dark); }
+  label { display: block; font-weight: 600; margin-top: 1rem; margin-bottom: .25rem; }
+  input[type="text"], input[type="email"], input[type="tel"], input[type="file"], select, textarea {
+    width: 100%;
+    padding: .6rem .7rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    background:#191d24;
+    color: var(--ink);
+  }
+  textarea { min-height: 120px; resize: vertical; }
+  .checkbox-row {
+    display: flex;
+    gap: .6rem;
+    align-items: flex-start;
+    margin-top: 1rem;
+    font-size: .95rem;
+  }
+  .checkbox-row input { margin-top: .3rem; }
+  .help-list { padding-left: 1.2rem; }
+  .help-list li { margin-bottom: .3rem; }
+  .cannot { color: var(--muted); font-size: .95rem; }
+  footer {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1rem 2rem;
+    font-size: .85rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  .note { font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+  .promise-grid {
+    display: grid;
+    gap: .75rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .promise {
+    background: #191d24;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: .8rem;
+    font-size: .92rem;
+  }
+  .promise strong { display: block; color: var(--navy-dark); }
+  .option-grid {
+    display: grid;
+    gap: .75rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: .5rem;
+  }
+  .option-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: .85rem;
+    background:#191d24;
+  }
+  .option-card label { margin: 0; display: flex; gap: .45rem; align-items: flex-start; }
+  .option-card strong { display: block; line-height: 1.2; }
+  .option-card span { display: block; color: var(--muted); font-size: .85rem; font-weight: 400; margin-top: .15rem; }
+  .hidden { display: none; }
+  .step-label {
+    display: inline-block;
+    margin-bottom: .4rem;
+    color: var(--navy);
+    font-size: .85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+  @media (max-width: 640px) {
+    .option-grid,
+    .promise-grid { grid-template-columns: 1fr; }
+  }
+body{background:#0e1014;color:#f7f8fa}main,.wrap,.card,.form-card,.service-card{color:inherit}h1,h2{color:#f7f8fa}a{color:#ff6670}input,select,textarea{background:#191d24;color:#f7f8fa;border-color:#656c79}.note,.muted{color:#c9cdd5}header{border-color:#f2c65b}button[type=submit]{background:#c81e30;color:#fff}strong{color:inherit}.promise strong,.amount{color:#f2c65b}.option-card{background:#191d24;color:#f7f8fa;border-color:#35383e}.emergency{background:#2b1720;color:#f7f8fa;border-color:#ff6670}.emergency h2{color:#ff6670}main{background:#191d24}.btn,.btn-red,.btn-navy{color:#fff}.service-label{color:#f2c65b}</style>
+</head>
+<body>
+
+<header>
+  <h1><span aria-hidden="true">🐾</span> Paws & Whiskers Help Line</h1>
+  <p>Have questions about your dog or cat? Just ask. Get general educational guidance from an experienced veterinary assistant on your private conversation page or by phone.</p>
+</header>
+
+<main>
+
+  <!-- EMERGENCY TRIAGE: always first, before the form -->
+  <section class="card emergency">
+    <h2><span aria-hidden="true">⚠️</span> Is this an emergency? Don't wait for me.</h2>
+    <p><strong>Contact an emergency veterinarian immediately</strong> if your dog or cat has any of these:</p>
+    <ul>
+      <li>Difficulty breathing</li>
+      <li>Seizures or collapse</li>
+      <li>Suspected poisoning</li>
+      <li>Hit by a car / major trauma</li>
+      <li>Bloated or swollen belly, unproductive retching</li>
+      <li>Unable to urinate (especially male cats)</li>
+      <li>Pale or blue gums</li>
+      <li>Uncontrolled bleeding</li>
+      <li>Heatstroke symptoms</li>
+      <li>Eye injury</li>
+      <li>Prolonged labor / birthing trouble</li>
+      <li>Snake or spider bite</li>
+    </ul>
+    <div class="actions">
+      <a class="btn btn-red" href="https://vetlocator.com/" target="_blank" rel="noopener noreferrer">Find an Emergency Vet</a>
+      <a class="btn btn-red" href="tel:8884264435">Poison Control: (888) 426-4435</a>
+    </div>
+    <p class="note">ASPCA Animal Poison Control is available 24/7 (a consultation fee may apply).</p>
+    <button type="button" class="btn btn-navy" id="continueButton">I understand — do not wait here for urgent care</button>
+    <p class="note">This service is not continuously monitored. If you are unsure about urgency, contact your veterinarian or an emergency hospital directly. Continuing does not mean your pet is safe to wait.</p>
+  </section>
+
+  <!-- WHAT I CAN HELP WITH -->
+  <section class="card">
+    <h2>What I can help with</h2>
+    <ul class="help-list">
+      <li>Discussing your concerns, recognizing general warning signs, and directing you to a veterinarian or emergency hospital when needed</li>
+      <li>General dog and cat care and feeding questions</li>
+      <li>Grooming, enrichment, and basic behavior tips</li>
+      <li>Understanding and organizing your veterinarian’s existing home-care and recovery instructions</li>
+      <li>Reviewing photos, short videos, PDFs, records, and labels for general context</li>
+      <li>Organizing symptom timing and changes, preparing for vet or emergency visits, and deciding what questions to ask</li>
+      <li>Understanding routine care (vaccination schedules, parasite prevention basics)</li>
+      <li>Pointing you to trusted resources and local services</li>
+    </ul>
+    <p class="cannot"><strong>What I can't do:</strong> I'm a veterinary assistant with experience in both emergency and general practice, but not a licensed veterinarian. I cannot diagnose conditions, prescribe or recommend medication doses, or replace an exam by your vet. When in doubt, I'll always point you to a licensed veterinarian.</p>
+  </section>
+
+  <section class="card">
+    <h2>How it works</h2>
+    <div class="promise-grid">
+      <div class="promise"><strong>1. Choose what works for you</strong>Select a small-fee option or Free Community Support. No explanation is required for Free Community Support.</div>
+      <div class="promise"><strong>2. Send your question</strong>Paid questions wait for the operator to confirm availability before payment. Free Community Support skips payment.</div>
+      <div class="promise"><strong>3. Get your reply</strong>Your answer comes through the option you selected. Free Community Support receives the same respectful service without a payment requirement.</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>What it costs</h2>
+    <p>Choose the option that works for you today. Paid options are kept intentionally small, and <strong>Free Community Support — Free</strong> is available with no explanation required.</p>
+    <p>If your dog or cat needs diagnosis, medication advice, treatment, or urgent care, contact a licensed veterinarian instead.</p>
+  </section>
+
+  <!-- PRICING -->
+  <section class="card">
+    <h2>Pricing</h2>
+    <ul class="help-list">
+      <li><strong>Quick Question — $10:</strong> for a simple question that needs a short response on your private conversation page.</li>
+      <li><strong>Detailed Guidance — $15:</strong> for a question that needs more time and explanation on your private conversation page.</li>
+      <li><strong>Phone Support — $25:</strong> for when you would rather talk through your question by phone.</li>
+      <li><strong>Free Community Support — Free:</strong> no-cost access is always available when needed. No explanation required.</li>
+    </ul>
+    <p><strong>📎 Private file uploads are included:</strong> up to 4 files of any type, 10 MB per file.</p>
+    <p class="note">Choose what works for you. Paid questions require availability approval before checkout. Free Community Support does not require payment.</p>
+  </section>
+
+  <section class="card">
+    <h2>Before you submit</h2>
+    <ul class="help-list">
+      <li>If breathing, collapse, poisoning, uncontrolled bleeding, or severe pain is possible, contact an emergency vet now.</li>
+      <li>Include timing, changes in appetite, energy, or bathroom habits, and anything already tried.</li>
+      <li>Photos or videos are helpful for visible or intermittent issues.</li>
+    </ul>
+  </section>
+
+  <!-- INTAKE FORM -->
+  <section class="card" id="askSection">
+    <span class="step-label">Step 1</span>
+    <h2>Choose your help option</h2>
+    <p class="note">Pick the service first. After that, the question form will open and ask for the details I need.</p>
+    <form id="intakeForm">
+      <label for="requestedService">First, choose the kind of help you want</label>
+      <select id="requestedService" required>
+        <option value="">Select a service…</option>
+        <option value="Quick Question — Private Message · $10">Quick Question — Private Message · $10</option>
+        <option value="Detailed Guidance — Private Message · $15">Detailed Guidance — Private Message · $15</option>
+        <option value="Phone Support · $25">Phone Support · $25</option>
+        <option value="Free Community Support — Private Message">Free Community Support — Private Message</option>
+      </select>
+      <p class="note" id="serviceNote">Pick an option first. The form will adjust based on private messages or phone.</p>
+
+      <div id="questionnaireFields" class="hidden">
+      <span class="step-label">Step 2</span>
+      <h3>Tell me what is going on</h3>
+      <label for="name">Your name</label>
+      <input type="text" id="name" required autocomplete="name">
+
+      <label for="email">Your email (for business support)</label>
+      <input type="email" id="email" required autocomplete="email">
+
+      <label for="phone">Phone number (optional)</label>
+      <input type="tel" id="phone" autocomplete="tel" placeholder="Required only if you request a phone call">
+      <p class="note" id="phoneNote">Optional for private messages. Required for phone calls.</p>
+
+      <div id="paymentFields"><label for="paymentMethod">Preferred payment method</label>
+      <select id="paymentMethod">
+        <option>PayPal or Apple Pay</option>
+      </select>
+      <p class="note">Submitting does not charge you. The operator first approves your question; payment then becomes available in your private conversation.</p></div>
+
+      <!-- Honeypot: humans never see or fill this. -->
+      <div style="position:absolute; left:-9999px;" aria-hidden="true">
+        <label for="website">Website</label>
+        <input type="text" id="website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <label for="petName">Dog or cat's name (optional)</label>
+      <input type="text" id="petName" placeholder="e.g., Bella">
+
+      <label for="species">Is this about a dog or cat?</label>
+      <select id="species" required>
+        <option value="">Select…</option>
+        <option>Dog</option>
+        <option>Cat</option>
+      </select>
+
+      <label for="age">Dog or cat's age (approximate)</label>
+      <input type="text" id="age" placeholder="e.g., 3 years">
+
+      <label for="breed">Breed or mix (optional)</label>
+      <input type="text" id="breed" placeholder="e.g., Labrador mix or domestic shorthair">
+
+      <label for="sex">Sex</label>
+      <select id="sex" required>
+        <option value="">Select…</option>
+        <option>Female</option>
+        <option>Male</option>
+        <option>Unknown</option>
+      </select>
+
+      <label for="reproductiveStatus">Spayed or neutered?</label>
+      <select id="reproductiveStatus" required>
+        <option value="">Select…</option>
+        <option>Spayed</option>
+        <option>Neutered</option>
+        <option>Not spayed or neutered</option>
+        <option>Unknown</option>
+      </select>
+
+      <label for="weight">Current weight (optional)</label>
+      <input type="text" id="weight" placeholder="e.g., 12 lb or 24 kg">
+
+      <label for="category">Question category</label>
+      <select id="category" required>
+        <option value="">Select…</option>
+        <option>Feeding &amp; nutrition (general)</option>
+        <option>Grooming &amp; general care</option>
+        <option>Behavior &amp; training basics</option>
+        <option>Warning signs, urgency concerns &amp; contacting a veterinarian</option>
+        <option>Preparing for a vet visit</option>
+        <option>New dog or cat questions</option>
+        <option>Other</option>
+      </select>
+
+      <label for="urgency">How worried are you right now?</label>
+      <select id="urgency">
+        <option>Not urgent — general question</option>
+        <option>Concerned — I want guidance soon</option>
+        <option>Very worried — I plan to contact a veterinarian</option>
+        <option>I may need an emergency vet</option>
+      </select>
+
+      <h3>Current condition</h3>
+      <p class="note">These details help me understand the situation and recognize when a veterinarian may be needed.</p>
+
+      <label for="symptomOnset">When did this concern start?</label>
+      <input type="text" id="symptomOnset" required placeholder="e.g., This morning, 3 days ago, or ongoing for 2 months">
+
+      <label for="symptomTrend">How is it changing?</label>
+      <select id="symptomTrend" required>
+        <option value="">Select…</option>
+        <option>Started suddenly</option>
+        <option>Getting worse</option>
+        <option>About the same</option>
+        <option>Improving</option>
+        <option>Comes and goes</option>
+        <option>Not applicable / general question</option>
+      </select>
+
+      <label for="appetite">Eating</label>
+      <select id="appetite" required><option value="">Select…</option><option>Normal</option><option>Eating less</option><option>Not eating</option><option>Eating more</option><option>Not sure / not applicable</option></select>
+
+      <label for="drinking">Drinking</label>
+      <select id="drinking" required><option value="">Select…</option><option>Normal</option><option>Drinking less</option><option>Not drinking</option><option>Drinking more</option><option>Not sure / not applicable</option></select>
+
+      <label for="urination">Urination</label>
+      <select id="urination" required><option value="">Select…</option><option>Normal</option><option>Urinating less</option><option>Not urinating</option><option>Urinating more</option><option>Straining or uncomfortable</option><option>Not sure / not applicable</option></select>
+
+      <label for="stool">Stool</label>
+      <select id="stool" required><option value="">Select…</option><option>Normal</option><option>Diarrhea or loose stool</option><option>Constipated or straining</option><option>Blood noticed</option><option>No stool</option><option>Not sure / not applicable</option></select>
+
+      <label for="energy">Energy and behavior</label>
+      <select id="energy" required><option value="">Select…</option><option>Normal</option><option>A little quieter than usual</option><option>Very tired, weak, or hiding</option><option>Restless or uncomfortable</option><option>Not sure / not applicable</option></select>
+
+      <label for="vomiting">Vomiting</label>
+      <select id="vomiting" required><option value="">Select…</option><option>None</option><option>Once</option><option>More than once</option><option>Repeated retching with little or nothing coming up</option><option>Not sure / not applicable</option></select>
+
+      <label for="medicalHistory">Known medical conditions, allergies, or recent procedures (optional)</label>
+      <textarea id="medicalHistory" placeholder="Include ongoing conditions, allergies, surgeries, or recent veterinary care."></textarea>
+
+      <label for="currentMedications">Current medications and supplements (optional)</label>
+      <textarea id="currentMedications" placeholder="Names only are enough. Do not change or stop medication based on this service."></textarea>
+
+      <label for="actionsTaken">What have you tried, and has a veterinarian already been contacted? (optional)</label>
+      <textarea id="actionsTaken" placeholder="Include home care already tried, advice received, or when your dog or cat was last examined."></textarea>
+
+      <label for="question">Your question</label>
+      <textarea id="question" required placeholder="Describe what's going on. Include how long it's been happening and anything you've already tried."></textarea>
+      <p class="note"><strong>Communication policy:</strong> Please keep messages respectful. Abusive, threatening, discriminatory, sexually inappropriate, or repeatedly hostile messages are not permitted. Strong language used to describe a situation is not automatically a violation.</p>
+
+      <label for="attachments">Files (optional)</label>
+      <input type="file" id="attachments" multiple>
+      <p class="note">You can add up to 4 files of any type, 10 MB each. Private links expire after 30 days.</p>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="communicationAck" required>
+        <label for="communicationAck" style="font-weight:400; margin:0;">I agree to communicate respectfully and understand that abusive, threatening, discriminatory, sexually inappropriate, or repeatedly hostile messages may be rejected and access may be restricted.</label>
+      </div>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="ack" required>
+        <label for="ack" style="font-weight:400; margin:0;">I am at least 18 years old. I understand this is <strong>general educational information only</strong>, not veterinary medical advice, diagnosis, medication guidance, treatment, or a substitute for a licensed veterinarian. It does not create a veterinarian-client-patient relationship. I agree to the <a href="terms.html" target="_blank">service terms</a> and <a href="privacy.html" target="_blank">privacy notice</a>. For emergencies I will contact an emergency veterinarian directly.</label>
+      </div>
+
+      <label for="signedConsentName">Type your name to sign</label>
+      <input type="text" id="signedConsentName" required autocomplete="name" placeholder="Your full name">
+      <p class="note">By typing your name, you confirm the statement above, agree to the service terms, and accept the displayed price for your selected service.</p>
+
+      <p style="margin-top:1.25rem;">
+        <button type="submit" class="btn btn-navy">Send my question</button>
+      </p>
+      </div>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>Disclaimer:</strong> This service is run by a veterinary assistant and provides general dog-and-cat care education only. It is not veterinary medical advice and does not diagnose, prescribe, recommend medication or doses, provide treatment, interpret diagnostic results, or create a veterinarian-client-patient relationship. Contact a licensed veterinarian for medical concerns about your dog or cat. Responses are not immediate: if you believe your dog or cat may be experiencing a life-threatening emergency, do not wait for a reply. Contact an emergency veterinary hospital right away, or ASPCA Poison Control at (888) 426-4435 (24/7).</p>
+  <p><a href="privacy.html">Privacy</a> · <a href="terms.html">Service, cancellation &amp; refund terms</a></p>
+</footer>
+
+<script>
+  // ⚙️ SETUP: replace with your deployed Cloudflare Worker URL (see docs/CLOUDKIT_SETUP.md).
+  // Until then, submissions fall back to a pre-filled email to HELPLINE_EMAIL.
+  var WORKER_URL = "https://vet-helpline-development.dkjmmz6whh.workers.dev";
+  var HELPLINE_EMAIL = "info@bayareaapps.com";
+
+  document.getElementById("continueButton").addEventListener("click", function () {
+    document.body.classList.add("intake-ready");
+    document.getElementById("askSection").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  document.getElementById("requestedService").addEventListener("change", function (event) {
+    updateServiceGuidance(event.target.value);
+  });
+
+  document.getElementById("intakeForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    var payload = {
+      name: document.getElementById("name").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      phone: document.getElementById("phone").value.trim(),
+      preferredReply: replyMethodFromService(document.getElementById("requestedService").value),
+      requestedService: document.getElementById("requestedService").value,
+      petName: document.getElementById("petName").value.trim(),
+      species: document.getElementById("species").value,
+      age: document.getElementById("age").value.trim() || "Not given",
+      breed: document.getElementById("breed").value.trim() || "Not given",
+      sex: document.getElementById("sex").value,
+      reproductiveStatus: document.getElementById("reproductiveStatus").value,
+      weight: document.getElementById("weight").value.trim() || "Not given",
+      category: document.getElementById("category").value,
+      urgency: document.getElementById("urgency").value,
+      symptomOnset: document.getElementById("symptomOnset").value.trim(),
+      symptomTrend: document.getElementById("symptomTrend").value,
+      appetite: document.getElementById("appetite").value,
+      drinking: document.getElementById("drinking").value,
+      urination: document.getElementById("urination").value,
+      stool: document.getElementById("stool").value,
+      energy: document.getElementById("energy").value,
+      vomiting: document.getElementById("vomiting").value,
+      medicalHistory: document.getElementById("medicalHistory").value.trim() || "None reported",
+      currentMedications: document.getElementById("currentMedications").value.trim() || "None reported",
+      actionsTaken: document.getElementById("actionsTaken").value.trim() || "None reported",
+      question: document.getElementById("question").value.trim(),
+      sourceChannel: "Website",
+      conversationStatus: "Needs response",
+      paymentStatus: isFreeSupport(document.getElementById("requestedService").value) ? "No payment required" : "Awaiting approval",
+      paymentMethod: isFreeSupport(document.getElementById("requestedService").value) ? "Free Community Support" : document.getElementById("paymentMethod").value,
+      paymentAmount: amountFromService(document.getElementById("requestedService").value),
+      paymentLink: "",
+      signedConsentName: document.getElementById("signedConsentName").value.trim(),
+      signedConsentAt: new Date().toISOString(),
+      acceptedTerms: document.getElementById("ack").checked ? "yes" : "no",
+      acceptedCommunicationPolicy: document.getElementById("communicationAck").checked ? "yes" : "no",
+      website: document.getElementById("website").value // honeypot
+    };
+    var files = Array.prototype.slice.call(document.getElementById("attachments").files || []);
+    payload.attachmentSummary = files.length
+      ? files.map(function (file) {
+          return file.name + " (" + (file.type || "unknown type") + ", " + Math.ceil(file.size / 1024) + " KB)";
+        }).join("\n")
+      : "";
+    if (payload.website) return; // bots only — humans never see that field
+
+    if (!payload.requestedService) {
+      alert("Please choose the kind of help you want first.");
+      return;
+    }
+    if ((payload.preferredReply === "Text message" || payload.preferredReply === "Phone call") && !payload.phone) {
+      alert("Please add your phone number for text replies or phone calls.");
+      return;
+    }
+    var moderation = moderateClientMessage(payload.question);
+    if (moderation.blocked) {
+      alert("This message can't be sent as written because it appears to violate the communication policy. Please revise the message and try again.");
+      return;
+    }
+    if (moderation.warned && !window.confirm("Some wording in this message may come across as directed hostility. Please review it before sending. Send it as written?")) {
+      return;
+    }
+    if (!payload.signedConsentName) {
+      alert("Please type your name to sign the consent statement.");
+      return;
+    }
+    if (files.length > 4) {
+      alert("Please choose 4 files or fewer.");
+      return;
+    }
+    var oversizedFile = files.find(function (file) { return file.size > 10 * 1024 * 1024; });
+    if (oversizedFile) {
+      alert(oversizedFile.name + " is too large. Please keep each file under 10 MB.");
+      return;
+    }
+    if (files.reduce(function (total, file) { return total + file.size; }, 0) > 40 * 1024 * 1024) {
+      alert("Please keep the combined files at 40 MB or less.");
+      return;
+    }
+    if (payload.urgency === "I may need an emergency vet") {
+      alert("Please contact an emergency veterinarian now instead of submitting a paid request.");
+      return;
+    }
+    if (payload.urination === "Not urinating" || payload.vomiting === "Repeated retching with little or nothing coming up") {
+      alert("This may be an emergency. Please contact an emergency veterinarian now instead of submitting a paid request.");
+      return;
+    }
+
+    if (WORKER_URL.indexOf("REPLACE_WITH") === 0) {
+      // Email mode: open the client's mail app with the question pre-filled.
+      var subject = "Care line question (" + (payload.petName || payload.species) + " · " + payload.category + ")";
+      var body = "Name: " + payload.name +
+        "\nReply-to email: " + payload.email +
+        "\nPreferred reply: " + payload.preferredReply +
+        "\nService requested: " + payload.requestedService +
+        "\nPayment status: " + payload.paymentStatus +
+        "\nPreferred payment: " + payload.paymentMethod +
+        "\nPayment amount: " + payload.paymentAmount +
+        "\nSigned consent: " + payload.signedConsentName + " at " + payload.signedConsentAt +
+        (payload.phone ? "\nPhone: " + payload.phone : "") +
+        (payload.petName ? "\nPet name: " + payload.petName : "") +
+        "\nPet species: " + payload.species +
+        "\nPet age: " + payload.age +
+        "\nBreed: " + payload.breed +
+        "\nSex: " + payload.sex +
+        "\nSpay/neuter status: " + payload.reproductiveStatus +
+        "\nWeight: " + payload.weight +
+        "\nCategory: " + payload.category +
+        "\nUrgency: " + payload.urgency +
+        "\nStarted: " + payload.symptomOnset +
+        "\nTrend: " + payload.symptomTrend +
+        "\nEating: " + payload.appetite +
+        "\nDrinking: " + payload.drinking +
+        "\nUrination: " + payload.urination +
+        "\nStool: " + payload.stool +
+        "\nEnergy/behavior: " + payload.energy +
+        "\nVomiting: " + payload.vomiting +
+        "\nMedical history: " + payload.medicalHistory +
+        "\nMedications/supplements: " + payload.currentMedications +
+        "\nAlready tried/contacted vet: " + payload.actionsTaken +
+        (payload.attachmentSummary ? "\n\nFiles selected:\n" + payload.attachmentSummary + "\n\nPlease attach these files to this email before sending." : "") +
+        "\n\nQuestion:\n" + payload.question;
+      window.location.href = "mailto:" + HELPLINE_EMAIL +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+      var note = document.getElementById("mailtoNote");
+      if (!note) {
+        note = document.createElement("p");
+        note.id = "mailtoNote";
+        note.className = "note";
+        e.target.appendChild(note);
+      }
+      note.innerHTML = "📧 Your email app should have opened with your question filled in. If you selected files, attach them to that email, then <strong>press send there</strong>. If nothing opened, email it to the public care-line address shown here: <strong>" + HELPLINE_EMAIL + "</strong>.<br><br><strong>Note:</strong> this address should be a public alias that forwards to the operator privately. Email fallback goes to the mailbox only and will not appear in the private operator app until the CloudKit worker or inbound email relay is connected.";
+      return;
+    }
+
+    var button = e.target.querySelector("button[type=submit]");
+    button.disabled = true;
+    button.textContent = "Sending…";
+
+    var controller = new AbortController();
+    // Allow large attachments to upload over a slow mobile connection.
+    var uploadBytes = files.reduce(function (total, file) { return total + file.size; }, 0);
+    var timeoutMs = Math.max(25000, 30000 + Math.ceil(uploadBytes / (128 * 1024)) * 1000);
+    var timeout = window.setTimeout(function () { controller.abort(); }, timeoutMs);
+    payload.conversationToken = conversationToken; payload.conversationAccess = conversationAccess;
+    fetch(WORKER_URL, {
+      method: "POST",
+      body: submissionBody(payload, files),
+      signal: controller.signal
+    }).then(function (response) {
+      window.clearTimeout(timeout);
+      if (!response.ok) {
+        return response.json().catch(function () { return {}; }).then(function (data) {
+          throw new Error(data.error || "Send failed");
+        });
+      }
+      return response.json();
+    }).then(function (data) {
+      if (data.conversationURL) {
+        var conversation = new URL(data.conversationURL);
+        if (conversation.origin !== "https://paws-whiskers-care-line.dkjmmz6whh.workers.dev" || conversation.pathname !== "/conversation.html" || !/^#thread=[a-f0-9]{32}\.[a-f0-9]{64}$/.test(conversation.hash)) throw new Error("Your private conversation could not be verified.");
+        window.location.assign(conversation.href); return;
+      }
+      var section = document.getElementById("askSection");
+      section.replaceChildren();
+      var heading = document.createElement("h2");
+      heading.textContent = "✅ Question sent!";
+      var message = document.createElement("p");
+      message.textContent = isFreeSupport(payload.requestedService)
+        ? "Thanks, " + payload.name + ". Your Free Community Support request for " + (payload.petName || "your dog or cat") + " was received. No payment is required."
+        : "Thanks, " + payload.name + ". Your " + payload.requestedService + " request for " + (payload.petName || "your dog or cat") + " was received and is waiting for availability approval. You have not been charged. Payment will become available after the operator approves your question.";
+      section.append(heading, message);
+      if (data.statusURL) {
+        var statusLink = document.createElement("a");
+        statusLink.href = data.statusURL;
+        statusLink.textContent = "Check approval status";
+        statusLink.className = "btn btn-navy";
+        section.append(statusLink);
+      }
+    }).catch(function (error) {
+      window.clearTimeout(timeout);
+      button.disabled = false;
+      button.textContent = "Send my question";
+      var fallback = HELPLINE_EMAIL.indexOf("REPLACE_WITH") === 0
+        ? "Please try again in a few minutes."
+        : "Please try again in a few minutes, or email your question directly to " + HELPLINE_EMAIL + ".";
+      alert("Sorry — your question couldn't be sent. " + (error.message || fallback));
+    });
+  });
+
+  function moderateClientMessage(message) {
+    var text = String(message || "").toLowerCase();
+    var severe = [
+      /\b(i('| a)?m going to|i will|gonna) (kill|hurt|shoot|stab|attack) (you|u)\b/,
+      /\bkill yourself\b/,
+      /\b(i know where you live|i('| a)?ll find you)\b/,
+      /\b(send|show) (me )?(nudes|naked pictures)\b/
+    ];
+    var directedHostility = [
+      /\byou('| a)?re (an? )?(idiot|moron|stupid|useless|worthless)\b/,
+      /\bfuck you\b/,
+      /\bshut the fuck up\b/
+    ];
+    return {
+      blocked: severe.some(function (pattern) { return pattern.test(text); }),
+      warned: directedHostility.some(function (pattern) { return pattern.test(text); })
+    };
+  }
+
+  function submissionBody(payload, files) {
+    var form = new FormData();
+    Object.keys(payload).forEach(function (key) {
+      form.append(key, payload[key]);
+    });
+    files.forEach(function (file) {
+      form.append("attachments", file, file.name);
+    });
+    return form;
+  }
+
+  function amountFromService(service) {
+    if (isFreeSupport(service)) return "Free";
+    var match = String(service).match(/\$\d+/);
+    return match ? match[0] : "Confirm";
+  }
+
+  function isFreeSupport(service) { return String(service).indexOf("Free Community Support") === 0; }
+
+  var conversationToken = crypto.randomUUID().replaceAll("-", "");
+  var conversationAccess = crypto.randomUUID().replaceAll("-", "") + crypto.randomUUID().replaceAll("-", "");
+
+  function replyMethodFromService(service) {
+    if (service.toLowerCase().indexOf("text") !== -1) return "Text message";
+    if (service.indexOf("Phone") === 0) return "Phone call";
+    return service.indexOf("Private Message") !== -1 ? "Private website conversation" : "Email";
+  }
+
+  function updateServiceGuidance(service) {
+    var note = document.getElementById("serviceNote");
+    var phoneNote = document.getElementById("phoneNote");
+    var paymentFields = document.getElementById("paymentFields");
+    var fields = document.getElementById("questionnaireFields");
+    var method = replyMethodFromService(service);
+    document.getElementById("phone").required = !!service && method === "Phone call";
+    if (!service) {
+      note.textContent = "Pick an option first. The form will adjust based on private messages or phone.";
+      fields.classList.add("hidden");
+      paymentFields.classList.remove("hidden");
+      phoneNote.textContent = "Optional for private messages. Required for phone calls.";
+      return;
+    }
+    fields.classList.remove("hidden");
+    if (isFreeSupport(service)) {
+      paymentFields.classList.add("hidden");
+      note.textContent = "Free Community Support is free. No payment and no explanation are required.";
+    } else {
+      paymentFields.classList.remove("hidden");
+    }
+    if (method === "Private website conversation") {
+      note.textContent = "Read your response and send follow-up messages on your private conversation page. Bookmark the page after sending. No SMS or email reply is required.";
+      phoneNote.textContent = "Optional for private messages. Required only for phone-call requests.";
+    } else if (method === "Email") {
+      note.textContent = isFreeSupport(service) ? "Free Community Support is free. You'll receive your reply by email. No explanation required." : "You'll receive written help by email for the displayed price.";
+      phoneNote.textContent = "Optional for email replies.";
+    } else if (method === "Text message") {
+      note.textContent = isFreeSupport(service) ? "Free Community Support is free. You'll receive your reply by text, so your phone number is required. No explanation required." : "You'll receive help by text message, so your phone number is required.";
+      phoneNote.textContent = "Required for this text-message service.";
+    } else {
+      note.textContent = "You'll schedule or receive a phone call, so your phone number is required.";
+      phoneNote.textContent = "Required for this phone-call service.";
+    }
+  }
+
+  if ("serviceWorker" in navigator && window.location.protocol === "https:") {
+    navigator.serviceWorker.register("sw.js");
+  }
+</script>
+
+</body>
+</html>

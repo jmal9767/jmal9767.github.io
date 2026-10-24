@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Printable Poster — Paws & Whiskers Help Line</title>
+<link rel="icon" type="image/png" href="icons/icon-512.png">
+<meta name="theme-color" content="#c81e30">
+<style>
+  :root {
+    --navy: #c81e30;
+    --navy-dark: #ac1929;
+    --red: #c0392b;
+    --red-bg: #2b1720;
+    --ink: #f7f8fa;
+    --muted: #c9cdd5;
+    --bg: #0e1014;
+    --card: #191d24;
+    --border: #35383e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .toolbar {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    gap: .75rem;
+    align-items: center;
+  }
+  .toolbar .note { font-size: .9rem; color: var(--muted); }
+  .print-btn {
+    background: var(--navy);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: .7rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .print-btn:hover { background: var(--navy-dark); }
+
+  .poster {
+    max-width: 720px;
+    margin: 0 auto 2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2rem 2.25rem;
+  }
+  .poster-header { text-align: center; margin-bottom: 1.25rem; }
+  .poster-header h1 { margin: 0; font-size: 2rem; color: var(--navy); }
+  .poster-header .tagline { margin: .35rem 0 0; font-size: 1.1rem; color: var(--muted); }
+
+  .intro { font-size: 1.05rem; text-align: center; margin: 0 0 1.25rem; }
+
+  .columns { display: flex; gap: 1.5rem; margin-bottom: 1.25rem; }
+  .col { flex: 1; }
+  .col h2 { font-size: 1.05rem; margin: 0 0 .5rem; color: var(--navy-dark); }
+  .col ul { margin: 0; padding-left: 1.15rem; font-size: .95rem; }
+  .col li { margin-bottom: .3rem; }
+
+  .pricing { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .55rem .9rem;
+    border-bottom: 1px solid var(--border);
+    font-size: .95rem;
+  }
+  .price-row:last-child { border-bottom: none; }
+  .price-row .amount { font-weight: 700; color: var(--navy); white-space: nowrap; }
+  .price-row .detail { display: block; font-size: .82rem; color: var(--muted); font-weight: 400; }
+
+  .qr-block {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--bg);
+    border: 2px solid var(--navy);
+    border-radius: 12px;
+    padding: 1.1rem 1.4rem;
+    margin-bottom: 1.25rem;
+  }
+  .qr-block img { width: 230px; height: 230px; flex-shrink: 0; }
+  .qr-text h2 { margin: 0 0 .35rem; font-size: 1.3rem; color: var(--navy-dark); }
+  .qr-text p { margin: .2rem 0; font-size: .95rem; }
+  .qr-text .url { font-size: .85rem; color: var(--muted); word-break: break-all; }
+
+  .emergency {
+    border: 2px solid var(--red);
+    background: var(--red-bg);
+    border-radius: 10px;
+    padding: .8rem 1.1rem;
+    font-size: .92rem;
+    margin-bottom: 1rem;
+  }
+  .emergency strong { color: var(--red); }
+
+  .disclaimer { font-size: .78rem; color: var(--muted); margin: 0; text-align: center; }
+
+  @media (max-width: 560px) {
+    .columns { flex-direction: column; }
+    .qr-block { flex-direction: column; text-align: center; }
+    .qr-block img { width: 250px; height: 250px; }
+  }
+
+  @media print {
+    body { background:#191d24; }
+    .toolbar { display: none; }
+    .poster {
+      max-width: none;
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      padding: .5in;
+    }
+    .qr-block { break-inside: avoid; }
+  }
+body{background:#0e1014;color:#f7f8fa}main,.wrap,.card,.form-card,.service-card{color:inherit}h1,h2{color:#f7f8fa}a{color:#ff6670}input,select,textarea{background:#191d24;color:#f7f8fa;border-color:#656c79}.note,.muted{color:#c9cdd5}header{border-color:#f2c65b}button[type=submit]{background:#c81e30;color:#fff}strong{color:inherit}.promise strong,.amount{color:#f2c65b}.option-card{background:#191d24;color:#f7f8fa;border-color:#35383e}.emergency{background:#2b1720;color:#f7f8fa;border-color:#ff6670}.emergency h2{color:#ff6670}main{background:#191d24}.btn,.btn-red,.btn-navy{color:#fff}.service-label{color:#f2c65b}</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button class="print-btn" onclick="window.print()">🖨 Print this poster</button>
+  <span class="note">Prints on one letter-size page. Post it at clinics, pet stores, or community boards.</span>
+</div>
+
+<div class="poster">
+
+  <div class="poster-header">
+    <h1><span aria-hidden="true">🐾</span> Paws & Whiskers Help Line</h1>
+    <p class="tagline">Dog-and-cat care questions, answered by a veterinary assistant with emergency &amp; general-practice experience</p>
+  </div>
+
+  <p class="intro">Have questions about your dog or cat? Just ask. Scan the code
+  and send the details for practical, general educational guidance from an
+  experienced veterinary assistant on your private conversation page or by phone.</p>
+
+  <div class="columns">
+    <div class="col">
+      <h2>What you can ask</h2>
+      <ul>
+        <li>"What warning signs mean I should contact a veterinarian?"</li>
+        <li>Feeding, grooming &amp; behavior help</li>
+        <li>Send photos, videos, PDFs or any file</li>
+        <li>Home care &amp; recovery after a vet visit</li>
+        <li>Vet-visit prep, new dogs or cats &amp; routine care</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h2>Pricing</h2>
+      <p><strong>Choose your service before you submit.</strong> Choose what works for you: $10 Quick Question, $15 Detailed Guidance, $25 Phone Support, or Free Community Support.</p>
+      <div class="pricing">
+        <div class="price-row"><span><strong>Quick Question</strong><span class="detail">A reply on your private conversation page</span></span><span class="amount">$10</span></div>
+        <div class="price-row"><span><strong>Detailed Guidance</strong><span class="detail">More detailed guidance in your private conversation</span></span><span class="amount">$15</span></div>
+        <div class="price-row"><span><strong>Phone Support</strong><span class="detail">Talk through your question by phone</span></span><span class="amount">$25</span></div>
+        <div class="price-row"><span><strong>Free Community Support</strong><span class="detail">No-cost access when needed; no explanation required</span></span><span class="amount">Free</span></div>
+        <div class="price-row"><span><strong>📎 Private uploads</strong><span class="detail">Any file type, up to 4 files at 10 MB each</span></span><span class="amount">Included</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qr-block">
+    <img src="docs/share-qr.png" alt="QR code linking to the Paws & Whiskers Help Line website">
+    <div class="qr-text">
+      <h2>Scan to ask your question</h2>
+      <p>Point your phone's camera at the code — it opens the care-line page where
+      you can read how it works and send your question. No app download needed.
+      If a paid response does not cover the agreed question, request a refund review.</p>
+      <p class="url">Paws & Whiskers Help Line intake page</p>
+    </div>
+  </div>
+
+  <div class="emergency">
+    <strong>⚠️ Emergencies can't wait for email.</strong> If your dog or cat is having trouble
+    breathing, seizing, bleeding, or may have been poisoned, contact an emergency vet
+    now. Poison Control: <strong>(888) 426-4435</strong> (24/7, fee may apply).
+  </div>
+
+  <p class="disclaimer">Disclaimer: Run by a veterinary assistant — general dog-and-cat care
+  education only. It does not diagnose, prescribe, recommend medication or doses,
+  provide treatment, interpret diagnostic results, or create a veterinarian-client-patient
+  relationship. Contact a licensed veterinarian for medical concerns. If this could be
+  a life-threatening emergency, do not wait for a reply; contact an emergency vet now.</p>
+
+</div>
+
+</body>
+</html>
